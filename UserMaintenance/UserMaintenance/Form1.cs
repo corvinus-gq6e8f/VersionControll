@@ -21,6 +21,7 @@ namespace UserMaintenance
             label1.Text = Resource1.FullName;
             button1.Text = Resource1.Add;
             button2.Text = Resource1.KiIr;
+            button3.Text = Resource1.Delete;
 
             //listbox1
             listBox1.DataSource = users;
@@ -55,6 +56,13 @@ namespace UserMaintenance
                 }
             }
             MessageBox.Show("Sikeres mentés!");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem == null) return;
+            User offos = (User)listBox1.SelectedItem;
+            users.Remove(offos);
         }
     }
 }
